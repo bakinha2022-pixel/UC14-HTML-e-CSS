@@ -1,0 +1,26 @@
+body{
+    background-color: rgb(41, 148, 219);
+}
+#titulo-clinica{
+    color:  rgb(14, 76, 117);
+    text-align: justify;
+}
+.bemvindo{
+    color:  rgb(14, 76, 117);
+    text-align: center;
+}
+nav {
+  display: flex;
+  gap: 20px;
+  background-color: #2E8B57;
+  padding: 15px 30px;
+  border-radius: 12px;
+
+  display: flex;
+  justify-content: center;
+
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+img{
+    text-align: center;
+}
