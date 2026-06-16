@@ -1,0 +1,35 @@
+button {
+    padding: 15px 30px;
+    font-size: 20;
+    animation: pulsar 1s infinite;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 6px;
+    border: none;
+    color: white;
+    background-color: brown;
+}
+
+@keyframes pulsar {
+    0% {
+        transform: scale(1);
+       
+        background-color: brown;
+    }
+    50% {
+        transform: scale(2);
+        background-color: blue;
+    }
+    100% {
+        transform: scale(1);
+        
+    }
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: lightgray;
+    gap: 50px;
+}
