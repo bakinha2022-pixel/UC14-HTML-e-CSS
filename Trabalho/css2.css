@@ -1,27 +1,37 @@
 nav {
     display: flex;
     justify-content: space-around;
-    background-color: #4a1b1b;
+    background-color: #000000;
     padding: 10px;
 }
 .imagem {
    display: block;
-    margin: 30px auto; 
-    width: 500px;
+    margin: 50px auto; 
+    width: 1100px;
     height: auto;
+    border-radius: 50px;
 }
 .navbar {
     display: flex;
     justify-content: space-around;
-    background-color: #981010;
+    background-color: #fffefe;
     padding: 10px;
     border-radius: 20px;
     text-decoration: none;
     color: inherit;
 }
 body {
-    background-color: #e08585;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+  /* caminho relativo ao seu projeto */
+  background-image: url("images/fundo.jpg");
+  background-size: cover;        /* cobre toda a tela */
+  background-position: center;   /* centraliza a imagem */
+  background-repeat: no-repeat;  /* não repete */
+  background-attachment: fixed;  /* opcional: fixa ao rolar */
+  color: #000000;                   /* ajuste a cor do texto se necessário */
+}
+.texto {
+    text-align: center;
+    color: #ffffff;
+    font-size: 18px;
+    margin: 20px;
 }
