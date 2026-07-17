@@ -1,0 +1,116 @@
+nav {
+    display: flex;
+    justify-content: space-around;
+    background-color: #000000;
+    padding: 10px;
+}
+.imagem {
+   display: block;
+    margin: 50px auto; 
+    width: 500px;
+    height: auto;
+    border-radius: 20px;
+}
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    background-color: #fffefe;
+    padding: 10px;
+    border-radius: 20px;
+    text-decoration: none;
+    color: inherit;
+}
+body {
+    background-color: #272525;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.texto {
+    text-align: center;
+    color: #ffffff;
+    font-size: 18px;
+    margin: 20px;
+}
+.price-list{max-width:700px;margin:16px auto;padding:0}
+.price-list li{list-style:none;display:flex;justify-content:space-between;padding:8px 12px;border-bottom:1px solid rgba(255,255,255,0.06);color:#fff}
+.price-list .price{font-weight:600}
+.price-list li:last-child{border-bottom:0}
+.products{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+    margin:40px auto;
+}
+
+.product-card{
+    background:#fff;
+    border-radius:15px;
+    padding:20px;
+    text-align:center;
+    box-shadow:0 5px 15px rgba(0,0,0,.12);
+    transition:.3s;
+}
+
+.product-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 10px 25px rgba(0,0,0,.2);
+}
+
+.product-image{
+    width:100%;
+    height:200px;
+    background:#ececec;
+    border-radius:10px;
+    margin-bottom:15px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#777;
+    font-size:18px;
+}
+
+.product-card h3{
+    margin:15px 0;
+    font-size:22px;
+    color:#333;
+}
+
+.price-btn{
+    width:100%;
+    background:#000000;
+    color:#fff;
+    border:none;
+    padding:14px;
+    border-radius:8px;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.price-btn:hover{
+    background:#000000;
+}
+.products{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.product-card{
+    background:#fff;
+    border-radius:15px;
+    padding:20px;
+    text-align:center;
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+}
+
+.product-image{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    border-radius:12px;
+    margin-bottom:15px;
+}

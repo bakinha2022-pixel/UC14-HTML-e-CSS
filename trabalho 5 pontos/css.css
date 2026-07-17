@@ -1,0 +1,57 @@
+nav {
+    display: flex;
+    justify-content: space-around;
+    background-color: #1d1d1d;
+    padding: 10px;
+}
+.imagem {
+   display: block;
+    margin: 50px auto; 
+    width: 900px;
+    height: auto;
+    border-radius: 50px;
+}
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    background-color: #fffefe;
+    padding: 10px;
+    border-radius: 20px;
+    text-decoration: none;
+    color: inherit;
+}
+body {
+    background-color: #333232;
+}
+.texto {
+    text-align: center;
+    color: #f6ff00;
+    font-size: 18px;
+    margin: 20px;
+}
+.botão{
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #494848;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 180ms cubic-bezier(.2,.9,.2,1), box-shadow 180ms ease, background-color 180ms ease;
+    will-change: transform;
+    transform-origin: center;
+}
+.botão:hover{
+    transform: scale(1.08); /* aumenta o botão */
+    box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+    background-color: #5a5a5a;
+}
+.botão:active{
+    transform: scale(0.98);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.18);
+}
+.botão:focus{
+    outline: 2px solid rgba(255,255,255,0.2);
+    outline-offset: 2px;
+}

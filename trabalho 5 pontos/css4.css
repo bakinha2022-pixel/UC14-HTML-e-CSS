@@ -1,0 +1,81 @@
+nav {
+    display: flex;
+    justify-content: space-around;
+   background-color: #272525;
+    padding: 10px;
+}
+.imagem {
+   display: block;
+    margin: 50px auto; 
+    width: 500px;
+    height: auto;
+    border-radius: 50px;
+}
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    background-color: #fffefe;
+    padding: 10px;
+    border-radius: 20px;
+    text-decoration: none;
+    color: inherit;
+}
+body {
+    background-color: #272525;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.texto {
+    text-align: center;
+    color: #ffffff;
+    font-size: 18px;
+    margin: 20px;
+}
+.workers{
+    width:90%;
+    margin:40px auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+.worker-card{
+    background:#fff;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+    transition:.3s;
+    text-align:center;
+    padding-bottom:20px;
+}
+
+.worker-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 10px 25px rgba(0,0,0,.25);
+}
+
+.worker-image{
+    width:100%;
+    height:280px;
+    object-fit:cover;
+}
+
+.worker-card h3{
+    margin:15px 0 5px;
+    color:#222;
+    font-size:24px;
+}
+
+.worker-card h4{
+    color:#d6ff06;
+    margin-bottom:15px;
+    font-size:18px;
+}
+
+.worker-card p{
+    padding:0 20px;
+    color:#555;
+    line-height:1.6;
+    font-size:15px;
+}
