@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabela Periódica Acessível</title>
+    <link rel="stylesheet" href="quimica.css">
+</head>
+
+<body>
+
+<header>
+    <div>
+        <h1>Tabela Periódica</h1>
+        <p>Uma tabela simples, visual e acessível</p>
+    </div>
+
+    <button id="modoEscuro" aria-label="Ativar ou desativar modo escuro">
+        🌙 Modo escuro
+    </button>
+</header>
+
+<main>
+
+    <section class="controles">
+          <div class="controle">
+           <label for="tema">🎨 Tema</label>
+            <select id="tema">
+                <option value="Padrao">Padrão</option>
+                <option value="Dinossauros">Dinossauros</option>
+                <option value="espaço">Espaço</option>
+                <option value="Jogos">Jogos</option>
+                <option value="Animais">Animais</option>
+            </select>
+
+
+          </div>
+
+
+        <div class="controle">
+            <label for="tamanho">🔍 Tamanho</label>
+            <select id="tamanho">
+                <option value="pequeno">Pequeno</option>
+                <option value="medio" selected>Médio</option>
+                <option value="grande">Grande</option>
+            </select>
+        </div>
+
+        <div class="controle">
+            <label for="saturacao">🎨 Saturação</label>
+            <select id="saturacao">
+                <option value="baixa">Baixa</option>
+                <option value="media" selected>Média</option>
+                <option value="alta">Alta</option>
+            </select>
+        </div>
+
+        <div class="controle pesquisa">
+            <label for="pesquisa">🔎 Pesquisar</label>
+            <input
+                type="text"
+                id="pesquisa"
+                placeholder="Ex: Oxigênio, O, 8..."
+            >
+        </div>
+
+    </section>
+
+    <section class="legenda">
+
+        <span class="metais">Metais</span>
+        <span class="nao-metais">Não metais</span>
+        <span class="gases">Gases nobres</span>
+        <span class="halogenios">Halogênios</span>
+        <span class="lantanideos">Lantanídeos</span>
+        <span class="actinideos">Actinídeos</span>
+
+    </section>
+
+    <section class="tabela-container">
+
+        <div id="tabela" class="tabela"></div>
+
+    </section>
+
+    <section id="informacoes" class="informacoes">
+
+        <div class="info-vazia">
+            <span>⚛️</span>
+            <h2>Selecione um elemento</h2>
+            <p>
+                Clique em qualquer elemento da tabela para visualizar
+                suas informações.
+            </p>
+        </div>
+
+    </section>
+
+</main>
+
+<footer>
+    <p>
+        ⚛️ Tabela Periódica Acessível • Desenvolvida para facilitar o aprendizado
+    </p>
+</footer>
+
+<script src="javas.js"></script>
+
+</body>
+</html>
