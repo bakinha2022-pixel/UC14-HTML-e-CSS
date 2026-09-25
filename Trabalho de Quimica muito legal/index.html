@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabela Periódica Acessível</title>
+    <link rel="stylesheet" href="quimica.css">
+</head>
+
+<body>
+
+<header>
+    <div>
+        <h1>Tabela Periódica</h1>
+        <p>Uma tabela simples, visual e acessível</p>
+    </div>
+
+    <div style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap;">
+        <a href="index2.html" style="text-decoration: none;">
+            <button type="button" aria-label="Ir para o quiz">
+                Quiz
+            </button>
+        </a>
+
+        <button id="modoEscuro" aria-label="Ativar ou desativar modo escuro">
+            🌙 Modo escuro
+        </button>
+    </div>
+</header>
+
+<main>
+
+    <section class="controles">
+        <div class="controle">
+        <label for="cor"> Cor</label>
+        <select id="cor">
+            <option value="padrao" selected>Padrão</option>
+            <option value="azul">Azul</option>
+            <option value="verde">Verde</option>
+            <option value="vermelho">Vermelho</option>
+        </select>
+</div>  
+
+        <div class="controle">
+            <label for="tamanho">Tamanho</label>
+            <select id="tamanho">
+                <option value="pequeno">Pequeno</option>
+                <option value="medio" selected>Médio</option>
+                <option value="grande">Grande</option>
+            </select>
+        </div>
+
+        <div class="controle">
+            <label for="saturacao">Saturação</label>
+            <select id="saturacao">
+                <option value="baixa">Baixa</option>
+                <option value="media" selected>Média</option>
+                <option value="alta">Alta</option>
+            </select>
+        </div>
+
+        <div class="controle pesquisa">
+            <label for="pesquisa">Pesquisar</label>
+            <input
+                type="text"
+                id="pesquisa"
+                placeholder="Ex: Oxigênio, O, 8..."
+            >
+        </div>
+
+        <div class="controle upload">
+            <label for="familiaImagem">Família</label>
+            <select id="familiaImagem">
+                <option value="metais">Metais</option>
+                <option value="nao-metais">Não metais</option>
+                <option value="gases">Gases nobres</option>
+                <option value="halogenios">Halogênios</option>
+                <option value="lantanideos">Lantanídeos</option>
+                <option value="actinideos">Actinídeos</option>
+            </select>
+
+            <label for="uploadFamiliaImagem">Escolher imagem</label>
+            <input type="file" id="uploadFamiliaImagem" accept="image/*">
+        </div>
+
+    </section>
+
+    <section class="legenda">
+
+        <span class="metais">Metais</span>
+        <span class="nao-metais">Não metais</span>
+        <span class="gases">Gases nobres</span>
+        <span class="halogenios">Halogênios</span>
+        <span class="lantanideos">Lantanídeos</span>
+        <span class="actinideos">Actinídeos</span>
+
+    </section>
+
+    <section class="tabela-container">
+
+        <div id="tabela" class="tabela"></div>
+
+    </section>
+
+    <section id="informacoes" class="informacoes">
+
+        <div class="info-vazia">
+            <span>⚛️</span>
+            <h2>Selecione um elemento</h2>
+            <p>
+                Clique em qualquer elemento da tabela para visualizar
+                suas informações.
+            </p>
+        </div>
+
+    </section>
+
+</main>
+
+<footer>
+    <p>
+        ⚛️ Tabela Periódica Acessível • Desenvolvida para facilitar o aprendizado
+    </p>
+</footer>
+
+<script src="javas.js"></script>
+
+</body>
+</html>

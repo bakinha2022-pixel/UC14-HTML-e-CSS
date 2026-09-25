@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz da Tabela Periódica</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="quiz-container">
+
+        <div class="header">
+            <h1>Quiz da Tabela Periódica</h1>
+            <p>Vamos testar seu conhecimento!</p>
+        </div>
+
+        <div id="quiz">
+
+            <div class="quiz-top">
+                <span id="question-number">Questão 1 de 10</span>
+                <span id="score">Pontos: 0</span>
+            </div>
+
+            <div class="progress-container">
+                <div id="progress"></div>
+            </div>
+
+            <h2 id="question">
+                Pergunta aparecerá aqui
+            </h2>
+
+            <div id="answers"></div>
+
+            <button id="next-button" class="next-button">
+                Próxima questão
+            </button>
+
+        </div>
+
+        <div id="result" class="result hidden">
+
+            <h2>Quiz concluído! Parabéns Pessoa!</h2>
+
+            <p id="final-score"></p>
+
+            <p id="message"></p>
+
+            <button id="restart-button">
+                Jogar novamente
+            </button>
+
+        </div>
+
+    </div>
+
+    <script src="javas2.js"></script>
+</body>
+</html>
