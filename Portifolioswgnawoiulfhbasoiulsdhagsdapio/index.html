@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css.css">
+    <title>Selecionar mundo | Meu portfólio</title>
+</head>
+<body>
+    <main class="seletor-mundos">
+        <header class="cabecalho">
+            <a class="voltar" href="index2.html" aria-label="Voltar ao menu principal">← MENU</a>
+            <p class="marca">MEU PORTFÓLIO</p>
+            <span class="status"><span class="status-ponto"></span> MUNDOS DISPONÍVEIS</span>
+        </header>
+
+        <section class="conteudo" aria-labelledby="titulo-pagina">
+            <div class="introducao">
+                <p class="sobretitulo">ESCOLHA SUA PRÓXIMA AVENTURA</p>
+                <h1 id="titulo-pagina">Selecionar mundo</h1>
+                <p class="descricao">Cada mundo apresenta um dos meus projetos.</p>
+            </div>
+
+            <div class="lista-mundos" role="radiogroup" aria-label="Projetos disponíveis">
+                <label class="mundo">
+                    <input type="radio" name="mundo" value="cinema" checked>
+                    <span class="miniatura miniatura-cinema" aria-hidden="true"><span>▶</span></span>
+                    <span class="detalhes-mundo">
+                        <span class="numero-mundo">MUNDO 01</span>
+                        <span class="nome-mundo">Cinema</span>
+                        <span class="descricao-mundo">Um projeto dedicado ao universo dos filmes.</span>
+                    </span>
+                    <span class="indicador-selecao" aria-hidden="true">✓</span>
+                </label>
+
+                <label class="mundo">
+                    <input type="radio" name="mundo" value="loja-aura">
+                    <span class="miniatura miniatura-aura" aria-hidden="true"><span>✦</span></span>
+                    <span class="detalhes-mundo">
+                        <span class="numero-mundo">MUNDO 02</span>
+                        <span class="nome-mundo">Loja de Aura</span>
+                        <span class="descricao-mundo">Uma loja com identidade e brilho próprios.</span>
+                    </span>
+                    <span class="indicador-selecao" aria-hidden="true">✓</span>
+                </label>
+            </div>
+
+            <footer class="rodape-seletor">
+                <span><strong>2</strong> mundos encontrados</span>
+                <span class="dica-teclado">Use o mouse para selecionar um mundo</span>
+            </footer>
+        </section>
+    </main>
+</body>
+</html>

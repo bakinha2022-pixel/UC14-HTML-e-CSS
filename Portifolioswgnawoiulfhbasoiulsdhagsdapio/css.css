@@ -1,0 +1,292 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	min-height: 100vh;
+	margin: 0;
+	padding: 28px;
+	color: #f4f4f4;
+	font-family: Arial, sans-serif;
+	background:
+		radial-gradient(ellipse at 50% 0%, rgba(87, 132, 65, 0.19), transparent 48%),
+		#101010;
+}
+
+.seletor-mundos {
+	width: min(100%, 1080px);
+	min-height: calc(100vh - 56px);
+	margin: 0 auto;
+	overflow: hidden;
+	border: 1px solid #30352e;
+	background: #171917;
+	box-shadow: 0 24px 80px rgba(0, 0, 0, 0.38);
+}
+
+.cabecalho {
+	display: flex;
+	min-height: 74px;
+	align-items: center;
+	justify-content: space-between;
+	gap: 18px;
+	padding: 16px 28px;
+	border-bottom: 1px solid #30352e;
+	background: #121412;
+}
+
+.voltar,
+.status,
+.marca {
+	color: #d8ddd5;
+	font-size: 11px;
+	font-weight: bold;
+	letter-spacing: 1.5px;
+	text-decoration: none;
+}
+
+.voltar {
+	transition: color 0.2s ease;
+}
+
+.voltar:hover {
+	color: #8bd66e;
+}
+
+.marca {
+	margin: 0;
+	color: #8bd66e;
+	font-family: 'Press Start 2P', monospace;
+	font-size: 10px;
+	text-align: center;
+}
+
+.status {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	color: #a8ada5;
+	font-size: 9px;
+}
+
+.status-ponto {
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: #82d46a;
+	box-shadow: 0 0 10px rgba(130, 212, 106, 0.75);
+}
+
+.conteudo {
+	width: min(100% - 48px, 760px);
+	margin: 0 auto;
+	padding: clamp(42px, 8vh, 80px) 0 32px;
+}
+
+.introducao {
+	margin-bottom: 34px;
+}
+
+.sobretitulo,
+.numero-mundo {
+	color: #8bd66e;
+	font-size: 10px;
+	font-weight: bold;
+	letter-spacing: 3px;
+}
+
+.sobretitulo {
+	margin: 0 0 15px;
+}
+
+.introducao h1 {
+	margin: 0;
+	font-family: 'Press Start 2P', monospace;
+	font-size: clamp(22px, 4vw, 36px);
+	line-height: 1.5;
+}
+
+.descricao {
+	margin: 12px 0 0;
+	color: #a5aaa2;
+	font-size: 15px;
+}
+
+.lista-mundos {
+	display: grid;
+	gap: 14px;
+}
+
+.mundo {
+	position: relative;
+	display: flex;
+	min-height: 142px;
+	align-items: center;
+	gap: 22px;
+	padding: 16px 22px;
+	border: 2px solid #343a32;
+	background: linear-gradient(105deg, #20231f, #191b19);
+	cursor: pointer;
+	transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+}
+
+.mundo:hover {
+	transform: translateY(-2px);
+	border-color: #718d61;
+}
+
+.mundo:has(input:checked) {
+	border-color: #83cf66;
+	background: linear-gradient(105deg, #263323, #191d19);
+	box-shadow: inset 4px 0 #83cf66, 0 0 22px rgba(131, 207, 102, 0.1);
+}
+
+.mundo input {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	opacity: 0;
+}
+
+.mundo:focus-within {
+	outline: 2px solid #f2d16d;
+	outline-offset: 3px;
+}
+
+.miniatura {
+	display: grid;
+	width: 110px;
+	height: 98px;
+	flex: 0 0 110px;
+	place-items: center;
+	overflow: hidden;
+	border: 2px solid rgba(255, 255, 255, 0.14);
+	color: white;
+	font-size: 30px;
+	text-shadow: 0 3px 8px #000;
+}
+
+.miniatura-cinema {
+	background: linear-gradient(145deg, rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.76)), linear-gradient(135deg, #bb7148, #442f42 55%, #171b24);
+}
+
+.miniatura-aura {
+	background: linear-gradient(145deg, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.64)), linear-gradient(135deg, #9c6ad4, #453986 55%, #182536);
+	color: #f2d16d;
+}
+
+.detalhes-mundo {
+	display: grid;
+	gap: 8px;
+}
+
+.numero-mundo {
+	font-size: 9px;
+	letter-spacing: 2px;
+}
+
+.nome-mundo {
+	font-family: 'Press Start 2P', monospace;
+	font-size: clamp(13px, 2vw, 17px);
+	line-height: 1.7;
+}
+
+.descricao-mundo {
+	color: #a5aaa2;
+	font-size: 13px;
+}
+
+.indicador-selecao {
+	display: grid;
+	width: 27px;
+	height: 27px;
+	flex: 0 0 27px;
+	place-items: center;
+	margin-left: auto;
+	border: 1px solid #596052;
+	border-radius: 50%;
+	color: transparent;
+}
+
+.mundo:has(input:checked) .indicador-selecao {
+	border-color: #83cf66;
+	background: #83cf66;
+	color: #142010;
+}
+
+.rodape-seletor {
+	display: flex;
+	justify-content: space-between;
+	gap: 16px;
+	margin-top: 22px;
+	color: #8c9289;
+	font-size: 12px;
+}
+
+.rodape-seletor strong {
+	color: #8bd66e;
+}
+
+.dica-teclado {
+	text-align: right;
+}
+
+@media (max-width: 600px) {
+	body {
+		padding: 12px;
+	}
+
+	.seletor-mundos {
+		min-height: calc(100vh - 24px);
+	}
+
+	.cabecalho {
+		flex-wrap: wrap;
+		justify-content: center;
+		padding: 17px 12px;
+	}
+
+	.cabecalho > * {
+		flex: 1 1 30%;
+	}
+
+	.marca {
+		order: -1;
+		flex-basis: 100%;
+	}
+
+	.status {
+		justify-content: flex-end;
+		font-size: 8px;
+	}
+
+	.conteudo {
+		width: calc(100% - 32px);
+		padding-top: 42px;
+	}
+
+	.mundo {
+		min-height: 120px;
+		gap: 14px;
+		padding: 12px;
+	}
+
+	.miniatura {
+		width: 76px;
+		height: 82px;
+		flex-basis: 76px;
+	}
+
+	.descricao-mundo {
+		font-size: 11px;
+	}
+
+	.rodape-seletor {
+		flex-direction: column;
+	}
+
+	.dica-teclado {
+		text-align: left;
+	}
+}
