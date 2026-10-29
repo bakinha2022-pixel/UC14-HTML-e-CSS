@@ -23,8 +23,8 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .home-page { min-height: 100vh; overflow: hidden; background: #101712; }
 .main-menu { position: relative; display: flex; min-height: 100vh; align-items: center; isolation: isolate; overflow: hidden; }
 .scene-art, .scene-vignette { position: absolute; inset: 0; z-index: -2; }
-.scene-art { background: url('images (1).jpg') center 48% / cover no-repeat; transform: scale(1.025); filter: saturate(.78) brightness(.72); }
-.scene-vignette { z-index: -1; background: linear-gradient(90deg, rgba(8, 13, 10, .94) 0%, rgba(8, 13, 10, .86) 27%, rgba(8, 13, 10, .35) 59%, rgba(8, 13, 10, .1) 100%), linear-gradient(0deg, rgba(7, 11, 8, .65), transparent 25%, transparent 75%, rgba(7, 11, 8, .4)); }
+.scene-art { background: url('Selfie no mundo Minecraft_ quem é ele_.png') center center / contain no-repeat; transform: scale(1.025); filter: saturate(.78) brightness(.72); }
+.scene-vignette { z-index: -1; background: linear-gradient(90deg, rgba(8, 13, 10, .88) 0%, rgba(8, 13, 10, .55) 18%, transparent 42%, transparent 58%, rgba(8, 13, 10, .55) 82%, rgba(8, 13, 10, .88) 100%), linear-gradient(0deg, rgba(7, 11, 8, .65), transparent 25%, transparent 75%, rgba(7, 11, 8, .4)); }
 .menu-panel { width: min(470px, 100%); min-height: 100vh; padding: clamp(28px, 5vw, 68px) clamp(24px, 5vw, 68px) 30px; display: flex; flex-direction: column; justify-content: center; background: linear-gradient(115deg, rgba(12, 17, 14, .96), rgba(16, 23, 18, .88)); border-right: 1px solid rgba(221, 240, 214, .13); box-shadow: 18px 0 60px rgba(0, 0, 0, .26); }
 .wordmark, .small-wordmark { display: inline-flex; align-items: center; gap: 13px; }
 .wordmark { margin-bottom: clamp(52px, 9vh, 92px); }
@@ -132,8 +132,8 @@ button, a { -webkit-tap-highlight-color: transparent; }
 
 @media (max-width: 640px) {
   .main-menu { align-items: stretch; }
-  .scene-art { background-position: 58% center; }
-  .scene-vignette { background: linear-gradient(90deg, rgba(8,13,10,.92), rgba(8,13,10,.62)), linear-gradient(0deg, rgba(7,11,8,.7), transparent 35%); }
+  .scene-art { background-position: center center; }
+  .scene-vignette { background: linear-gradient(90deg, rgba(8,13,10,.9), rgba(8,13,10,.55) 18%, transparent 42%, transparent 58%, rgba(8,13,10,.55) 82%, rgba(8,13,10,.9)), linear-gradient(0deg, rgba(7,11,8,.7), transparent 35%); }
   .menu-panel { width: min(100%, 430px); min-height: 100vh; padding: 35px 25px 78px; background: rgba(11, 17, 13, .82); border-right: 0; }
   .wordmark { margin-bottom: auto; }
   .menu-panel h1 { margin-top: 2vh; }
