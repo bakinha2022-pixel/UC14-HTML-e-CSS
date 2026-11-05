@@ -1,0 +1,599 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Share+Tech+Mono&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #080e0b;
+    color: #d8e8dc;
+    font-family: 'Rajdhani', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+button {
+    font-family: 'Rajdhani', sans-serif;
+    cursor: pointer;
+    border: 1px solid #547b5d;
+    background: #15291b;
+    color: #d8f5dc;
+    padding: 11px 18px;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #315c3a;
+    border-color: #9bd6a5;
+    transform: scale(1.03);
+}
+
+button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* =================================
+   CABEÇALHO
+================================= */
+
+.game-header {
+    text-align: center;
+    padding: 18px;
+    background: #101c14;
+    border-bottom: 2px solid #294b32;
+}
+
+.game-header h1 {
+    font-size: 32px;
+    letter-spacing: 5px;
+    color: #a5d6a7;
+}
+
+.game-header p {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 11px;
+    color: #718e77;
+    letter-spacing: 3px;
+}
+
+/* =================================
+   ESTRUTURA PRINCIPAL
+================================= */
+
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.screen {
+    display: none;
+    width: 100%;
+    max-width: 950px;
+}
+
+.screen.active {
+    display: flex;
+    justify-content: center;
+}
+
+/* =================================
+   SALA DA TORRE
+================================= */
+
+.office-background {
+    width: 100%;
+    height: 510px;
+    position: relative;
+    overflow: hidden;
+    border: 3px solid #344c39;
+
+    background:
+        linear-gradient(180deg, #07110fc2 0%, #101a16a8 55%, #090f0bd9 100%),
+        url("Torre.jpg") center 55% / cover no-repeat;
+
+    box-shadow: 0 0 30px #000;
+}
+
+.office-background::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background:
+        repeating-linear-gradient(
+            90deg,
+            transparent 0px,
+            transparent 90px,
+            #00000020 91px,
+            #00000020 95px
+        );
+
+    pointer-events: none;
+}
+
+/* =================================
+   INIMIGO DA TORRE
+================================= */
+
+.tower-enemy {
+    display: none;
+
+    position: absolute;
+    bottom: 160px;
+    right: 15%;
+
+    z-index: 5;
+    text-align: center;
+    animation: enemyAppear 0.5s ease;
+}
+
+.tower-enemy.visible {
+    display: block;
+}
+
+.person-sprite {
+    display: block;
+    width: auto;
+    height: 150px;
+    max-width: 100%;
+    object-fit: contain;
+    image-rendering: pixelated;
+    filter: drop-shadow(0 0 12px #000) brightness(0.7);
+}
+
+.tower-enemy p {
+    color: #ff5555;
+
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 13px;
+    font-weight: bold;
+
+    background: #160000;
+    padding: 5px;
+    border: 1px solid red;
+
+    white-space: nowrap;
+}
+
+@keyframes enemyAppear {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.tower-enemy.flashed {
+    animation: enemyRepelled 0.5s ease forwards;
+}
+
+@keyframes enemyRepelled {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+}
+
+/* =================================
+   MESA DA TORRE
+================================= */
+
+.office-desk {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 160px;
+
+    background:
+        linear-gradient(
+            #3a3025,
+            #17130f
+        );
+
+    border-top: 8px solid #59452f;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.desk-equipment {
+    display: flex;
+    justify-content: center;
+    gap: 55px;
+    width: 100%;
+}
+
+.desk-equipment div {
+    text-align: center;
+    color: #c3d4c4;
+}
+
+.desk-equipment p {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 10px;
+    color: #9bb69e;
+}
+
+#openCameraBtn {
+    background: #24452c;
+    border: 1px solid #80ae86;
+}
+
+.keyboard-hint {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 11px;
+    color: #91a996;
+    text-align: center;
+}
+
+/* =================================
+   CÂMERAS
+================================= */
+
+.camera-container {
+    width: 100%;
+    background: #101813;
+    border: 2px solid #42634a;
+    padding: 15px;
+    box-shadow: 0 0 25px #000;
+}
+
+.camera-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 10px;
+    margin-bottom: 12px;
+
+    background: #1b2c20;
+}
+
+.camera-header h2 {
+    font-size: 20px;
+    color: #a5d6a7;
+}
+
+.camera-status {
+    color: #ff5555;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 12px;
+}
+
+.camera-view {
+    height: 330px;
+    position: relative;
+    overflow: hidden;
+
+    background: #101b16;
+    border: 3px solid #405c45;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.camera-night {
+    display: none;
+}
+
+/* CENÁRIOS */
+
+.scene-0 {
+    background: linear-gradient(#07101b55, #07120b66), url("dark forest.jpg") center 48% / cover no-repeat;
+}
+
+.scene-1 {
+    background: linear-gradient(#10131755, #111b1466), url("download (1).jpg") center 55% / cover no-repeat;
+}
+
+.scene-2 {
+    background: linear-gradient(#111c1955, #10181066), url("download.jpg") center 50% / cover no-repeat;
+}
+
+.scene-3 {
+    background: linear-gradient(#1c1b1655, #17170f66), url("взгляните в нижний левый угол.jpg") center 52% / cover no-repeat;
+}
+
+.camera-view::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background:
+        repeating-linear-gradient(
+            transparent 0px,
+            #ffffff08 2px,
+            transparent 4px
+        );
+
+    pointer-events: none;
+    z-index: 4;
+}
+
+/* INIMIGO DAS CÂMERAS */
+
+.intruder {
+    display: none;
+
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    z-index: 3;
+}
+
+.intruder .person-sprite {
+    height: 150px;
+    filter: drop-shadow(0 0 14px #000) brightness(0.55);
+}
+
+.intruder.visible {
+    display: block;
+    animation: intruderAppear 0.5s ease;
+}
+
+@keyframes intruderAppear {
+    from {
+        opacity: 0;
+        transform: translate(-50%, 20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+}
+
+.camera-noise {
+    position: absolute;
+    inset: 0;
+    background: #ffffff05;
+    pointer-events: none;
+}
+
+.camera-label {
+    position: absolute;
+    bottom: 8px;
+    left: 10px;
+
+    color: #9ab59e;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 10px;
+
+    z-index: 5;
+}
+
+/* =================================
+   CONTROLES DAS CÂMERAS
+================================= */
+
+.camera-controls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 15px 0;
+}
+
+.camera-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+}
+
+.camera-buttons button {
+    min-width: 85px;
+}
+
+/* CÂMERA SELECIONADA */
+
+.camera-buttons button.selected {
+    background: #8bc995;
+    color: #07120a;
+
+    border: 2px solid #d0ffd5;
+    box-shadow: 0 0 15px #65ff7b;
+
+    transform: scale(1.08);
+}
+
+/* LANTERNA */
+
+#flashBtn {
+    background: #4a4820;
+    border-color: #a6a044;
+    color: #fff6a8;
+}
+
+.camera-container > .keyboard-hint {
+    margin-top: 5px;
+}
+
+/* =================================
+   SISTEMA DE ENERGIA
+================================= */
+
+#energyDisplay {
+    color: #a5e6ad;
+    transition: color 0.3s;
+}
+
+#energyDisplay.low {
+    color: #ffb347;
+}
+
+#energyDisplay.critical {
+    color: #ff4545;
+    animation: energyWarning 0.7s infinite alternate;
+}
+
+@keyframes energyWarning {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0.4;
+    }
+}
+
+/* FALTA DE ENERGIA */
+
+body.power-out {
+    background: #000;
+}
+
+body.power-out .office-background,
+body.power-out .camera-container {
+    filter: brightness(0.08);
+}
+
+body.power-out .game-header {
+    border-color: #350000;
+}
+
+body.power-out .game-header h1 {
+    color: #772222;
+}
+
+/* =================================
+   RODAPÉ
+================================= */
+
+.game-footer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 35px;
+
+    padding: 15px;
+
+    background: #101c14;
+    border-top: 2px solid #294b32;
+}
+
+.game-footer div {
+    text-align: center;
+}
+
+.game-footer p {
+    font-size: 11px;
+    color: #809c84;
+    letter-spacing: 1px;
+}
+
+.game-footer span {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 20px;
+    color: #b4e2b9;
+}
+
+/* =================================
+   FIM DE JOGO
+================================= */
+
+#endScreen.active {
+    align-items: center;
+}
+
+.end-container {
+    text-align: center;
+    padding: 60px 20px;
+    width: 100%;
+
+    background: #121c15;
+    border: 2px solid #547b5d;
+}
+
+.end-container h2 {
+    font-size: 35px;
+    color: #a5d6a7;
+    margin-bottom: 20px;
+}
+
+.end-container p {
+    color: #b7c9ba;
+    margin-bottom: 25px;
+    font-size: 18px;
+}
+
+/* =================================
+   RESPONSIVIDADE
+================================= */
+
+@media (max-width: 600px) {
+
+    .game-header h1 {
+        font-size: 25px;
+    }
+
+    main {
+        padding: 8px;
+    }
+
+    .office-background {
+        height: 430px;
+    }
+
+    .office-desk {
+        height: 145px;
+    }
+
+    .tower-enemy {
+        bottom: 145px;
+    }
+
+    .desk-equipment {
+        gap: 25px;
+    }
+
+    .camera-view {
+        height: 260px;
+    }
+
+    .game-footer {
+        gap: 18px;
+    }
+
+    .game-footer div {
+        min-width: 110px;
+    }
+
+    .person-sprite {
+        height: 115px;
+    }
+
+}

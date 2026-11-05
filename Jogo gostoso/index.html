@@ -1,0 +1,207 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Forest Watch</title>
+
+    <link rel="stylesheet" href="css.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header class="game-header">
+        <h1>FOREST WATCH</h1>
+        <p>POSTO DE VIGILÂNCIA FLORESTAL</p>
+    </header>
+
+    <main>
+
+        <!-- SALA DA TORRE -->
+
+        <section id="office" class="screen active">
+
+            <div class="office-background">
+
+                <!-- INIMIGO DA TORRE -->
+                <div id="towerEnemy" class="tower-enemy">
+                    <img class="person-sprite" src="download__2_-removebg-preview.png" alt="Invasor na torre">
+                    <p>INTRUSO NA TORRE!</p>
+                </div>
+
+                <div class="office-desk">
+
+                    <div class="desk-equipment">
+
+                        <div class="radio">
+                            <p>RÁDIO</p>
+                        </div>
+
+                        <div class="report">
+                            <p>RELATÓRIO</p>
+                        </div>
+
+                        <div class="monitor">
+                            <p>SISTEMA</p>
+                        </div>
+
+                    </div>
+
+                    <button id="openCameraBtn" onclick="openCameras()">
+                        ACESSAR CÂMERAS
+                    </button>
+
+                    <p class="keyboard-hint">
+                        Q - CÂMERAS | F - SINALIZADOR
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- TELA DAS CÂMERAS -->
+
+        <section id="cameraScreen" class="screen">
+
+            <div class="camera-container">
+
+                <div class="camera-header">
+
+                    <h2 id="cameraName">
+                        CAM 01 - FLORESTA
+                    </h2>
+
+                    <span class="camera-status">
+                        ● AO VIVO
+                    </span>
+
+                </div>
+
+                <div id="cameraView" class="camera-view scene-0">
+
+                    <div id="intruder" class="intruder">
+                        <img class="person-sprite" src="download__2_-removebg-preview.png" alt="Invasor na floresta">
+                    </div>
+
+                    <div class="camera-noise"></div>
+
+                    <div class="camera-label">
+                        FOREST WATCH SECURITY SYSTEM
+                    </div>
+
+                </div>
+
+
+                <!-- BOTÕES DAS CÂMERAS -->
+
+                <div class="camera-controls">
+
+                    <div class="camera-buttons">
+
+                        <button id="camBtn0" onclick="changeCamera(0)">
+                            CAM 01
+                        </button>
+
+                        <button id="camBtn1" onclick="changeCamera(1)">
+                            CAM 02
+                        </button>
+
+                        <button id="camBtn2" onclick="changeCamera(2)">
+                            CAM 03
+                        </button>
+
+                        <button id="camBtn3" onclick="changeCamera(3)">
+                            CAM 04
+                        </button>
+
+                    </div>
+
+                    <button id="flashBtn" onclick="useFlash()">
+                        USAR LANTERNA
+                    </button>
+
+                    <button onclick="closeCameras()">
+                        VOLTAR À TORRE
+                    </button>
+
+                </div>
+
+                <p class="keyboard-hint">
+                    A / D - TROCAR CÂMERA |
+                    E - LANTERNA |
+                    Q - VOLTAR
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- TELA DE FIM DE JOGO -->
+
+        <section id="endScreen" class="screen">
+
+            <div class="end-container">
+
+                <h2 id="endTitle">
+                    FIM DE TURNO
+                </h2>
+
+                <p id="endMessage"></p>
+
+                <button onclick="location.reload()">
+                    JOGAR NOVAMENTE
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- INFORMAÇÕES DO JOGO -->
+
+    <footer class="game-footer">
+
+        <div>
+            <p>INVASORES EXPULSOS</p>
+            <span id="expelledCount">0</span>
+        </div>
+
+        <div>
+            <p>SEMENTES PROTEGIDAS</p>
+            <span id="seedCount">100%</span>
+        </div>
+
+        <div>
+            <p>HORÁRIO</p>
+            <span id="clock">00:00</span>
+        </div>
+
+        <div>
+            <p>ENERGIA</p>
+            <span id="energyDisplay">300%</span>
+        </div>
+
+        <div>
+            <p>STATUS</p>
+            <span id="status">SEGURO</span>
+        </div>
+
+    </footer>
+
+
+    <script src="js.js"></script>
+
+</body>
+
+</html>
